@@ -10,19 +10,21 @@ const DATAURL = "http://www.principlesofeconometrics.com/sas/pizza.sas7bdat";
 function App() {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const doEffect = async () => {
-      const results = await fetchSASasJSON(proxyUrl + DATAURL);
-      setData(results);
-    };
-    doEffect();
-  }, []);
+  // useEffect(() => {
+  //   const doEffect = async () => {
+  //     const results = await fetchSASasJSON(proxyUrl + DATAURL);
+  //     setData(results);
+  //   };
+  //   doEffect();
+  // }, []);
 
   return (
     <>
-      {/* <SASReader dataSetter={setData} start={3} />
-      <DataTable data={data} /> */}
-      {JSON.stringify(data)}
+    <h1>View SAS dataset in browser</h1>
+    <h2>Using R with Haven</h2>
+      <SASReader dataSetter={setData} start={3} />
+      <DataTable data={data} />
+      {/* {JSON.stringify(data)} */}
     </>
   );
 }
